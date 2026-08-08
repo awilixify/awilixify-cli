@@ -1,5 +1,5 @@
 {
-	"name": "awilixify-cli",
+	"name": "@awilixify/cli",
 	"version": "0.1.0",
 	"description": "Command-line tools and client code generation for Awilixify applications",
 	"type": "module",
@@ -21,7 +21,8 @@
 	"files": [
 		"README.md",
 		"LICENSE",
-		"dist"
+		"dist",
+		"skills"
 	],
 	"scripts": {
 		"build": "tsc",
@@ -61,6 +62,8 @@
 		"awilixify",
 		"cli",
 		"codegen",
+		"devtools",
+		"ai",
 		"asyncapi",
 		"openapi",
 		"orval"
