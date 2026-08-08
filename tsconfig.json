@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"rootDir": "src",
+		"declaration": true,
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"target": "es2022",
+		"sourceMap": false,
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"lib": ["es2022"],
+		"moduleDetection": "force",
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
+		"noUncheckedIndexedAccess": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "dist", "test"]
+}

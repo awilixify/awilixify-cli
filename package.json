@@ -1,0 +1,72 @@
+{
+	"name": "awilixify-cli",
+	"version": "0.1.0",
+	"description": "Command-line tools and client code generation for Awilixify applications",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"bin": {
+		"awilixify": "./dist/cli.js"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./codegen": {
+			"types": "./dist/codegen/index.d.ts",
+			"import": "./dist/codegen/index.js"
+		}
+	},
+	"files": [
+		"README.md",
+		"LICENSE",
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"build:watch": "tsc --watch",
+		"build:release": "del-cli dist && npm run lint && npm run check-types && npm run test && npm run build",
+		"check-types": "tsc --pretty --noEmit",
+		"clean": "del-cli dist coverage",
+		"lint": "biome check src test",
+		"lint:fix": "biome check --write src test",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@asyncapi/modelina": "^5.10.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.15",
+		"@types/node": "^22.15.21",
+		"@vitest/coverage-v8": "^4.0.18",
+		"del-cli": "^7.0.0",
+		"typescript": "^5.9.3",
+		"vitest": "^4.0.18"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/awilixify/awilixify-cli.git"
+	},
+	"homepage": "https://github.com/awilixify/awilixify-cli#readme",
+	"bugs": {
+		"url": "https://github.com/awilixify/awilixify-cli/issues"
+	},
+	"keywords": [
+		"awilixify",
+		"cli",
+		"codegen",
+		"asyncapi",
+		"openapi",
+		"orval"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
+}
